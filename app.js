@@ -7,12 +7,14 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.message('hello', async ({ message, say }) => {
-    console.log('Recieved your message :)');
+app.event('reaction_added', async ({ event, client }) => {
+    const response = await client.users.info({
+        user: event.user
+    });
+    console.log(`User ${response.user.name} reacted with ${event.reaction}`);
 });
 
 (async () => {
   await app.start(process.env.PORT || 3000);
-
   console.log('⚡️ Bolt app is running!');
 })();
