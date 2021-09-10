@@ -1,0 +1,22 @@
+{
+  "name": "assign-pr-slack",
+  "version": "0.1.0",
+  "description": "Assign yourself to review a pull request with a Slack emoji",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dewinterjack/assign-pr-slack.git"
+  },
+  "author": "Jack Dewinter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dewinterjack/assign-pr-slack/issues"
+  },
+  "homepage": "https://github.com/dewinterjack/assign-pr-slack#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.6.0"
+  }
+}
