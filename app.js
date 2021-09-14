@@ -1,6 +1,9 @@
 require('dotenv').config();
 const { App } = require('@slack/bolt');
 
+// Change this to any emoji in slack
+const reactionToCheck = 'eyes';
+
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -12,7 +15,9 @@ app.event('reaction_added', async ({ event, client }) => {
     const response = await client.users.info({
         user: event.user
     });
-    console.log(`User ${response.user.name} reacted with ${event.reaction}`);
+    if(event.reaction === reactionToCheck) {
+      console.log(`User ${response.user.name} wants to assign themselves to the PR.`);
+    }
 });
 
 (async () => {
