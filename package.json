@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dewinterjack/assign-pr-slack#readme",
   "dependencies": {
-    "@slack/bolt": "^3.6.0"
+    "@slack/bolt": "^3.6.0",
+    "dotenv": "^10.0.0"
   }
 }
