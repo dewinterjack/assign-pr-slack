@@ -4,8 +4,7 @@
   "description": "Assign yourself to review a pull request with a Slack emoji",
   "main": "index.js",
   "scripts": {
-    "build": "babel src/ -d dist",
-    "start": "yarn build && node dist/app.js"
+    "start": "nodemon --exec babel-node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,8 @@
   "devDependencies": {
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6"
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "nodemon": "^2.0.12"
   }
 }
