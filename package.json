@@ -4,7 +4,8 @@
   "description": "Assign yourself to review a pull request with a Slack emoji",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "build": "babel src/ -d dist",
+    "start": "yarn build && node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,12 @@
   "homepage": "https://github.com/dewinterjack/assign-pr-slack#readme",
   "dependencies": {
     "@slack/bolt": "^3.6.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6"
   }
 }

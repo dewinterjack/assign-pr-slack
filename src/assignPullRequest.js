@@ -16,4 +16,4 @@ const getPullRequestDetailsFromMessage = (message) => {
     }
 }
 
-module.exports = { assignPullRequest }
+export { assignPullRequest }

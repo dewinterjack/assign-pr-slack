@@ -1,7 +1,6 @@
 require('dotenv').config();
-const { App } = require('@slack/bolt');
-
-const { assignPullRequest } = require('./assignPullRequest');
+import { App } from '@slack/bolt';
+import { assignPullRequest } from './assignPullRequest';
 
 // Change this to any emoji in slack
 const reactionToCheck = 'eyes';
