@@ -11,12 +11,12 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.event('reaction_added', async ({ event, client }) => {
+app.event('reaction_added', async ({ event, client, context }) => {
     const response = await client.users.info({
         user: event.user
     });
-    if(event.reaction === reactionToCheck) {
-      console.log(`User ${response.user.name} wants to assign themselves to the PR.`);
+    if(event.reaction === reactionToCheck && response.user.name === process.env.SLACK_USERNAME) {
+      console.log(`User with GitHub id ${process.env.GITHUB_USERNAME} wants to assign themselves to the PR.`);
     }
 });
 
